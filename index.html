@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio | ทัณญาพร นากันหา (มายด์)</title>
+    <!-- Google Fonts: Prompt & Sarabun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sarabun', 'sans-serif'],
+                        heading: ['Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Prompt', sans-serif;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700 antialiased selection:bg-teal-500 selection:text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/80 border-b border-slate-200/80 transition-all duration-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo / Name -->
+                <a href="#hero" class="flex items-center gap-2 group">
+                    <div class="w-9 h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center font-heading font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+                        M
+                    </div>
+                    <span class="font-heading font-semibold text-slate-800 text-lg tracking-tight">
+                        Tannyaporn<span class="text-teal-600">.Portfolio</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-teal-600 transition-colors">เกี่ยวกับฉัน</a>
+                    <a href="#education" class="hover:text-teal-600 transition-colors">ประวัติการศึกษา</a>
+                    <a href="#goals" class="hover:text-teal-600 transition-colors">เป้าหมาย & ความสนใจ</a>
+                    <a href="#contact" class="hover:text-teal-600 transition-colors">ติดต่อ</a>
+                </nav>
+
+                <!-- GitHub Guide Button (Desktop) -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="openModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 text-white text-xs font-medium hover:bg-slate-800 transition-all shadow-sm">
+                        <i class="fa-brands fa-github text-sm">
+                        </i>
+                        <span>วิธีลง GitHub Pages</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-4 space-y-2 text-sm font-medium">
+            <a href="#about" class="block py-2 text-slate-600 hover:text-teal-600">เกี่ยวกับฉัน</a>
+            <a href="#education" class="block py-2 text-slate-600 hover:text-teal-600">ประวัติการศึกษา</a>
+            <a href="#goals" class="block py-2 text-slate-600 hover:text-teal-600">เป้าหมาย & ความสนใจ</a>
+            <a href="#contact" class="block py-2 text-slate-600 hover:text-teal-600">ติดต่อ</a>
+            <button onclick="openModal()" class="w-full mt-2 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-slate-900 text-white text-xs font-medium">
+                <i class="fa-brands fa-github"></i>
+                <span>วิธีอัปโหลดลง GitHub Pages</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative py-16 md:py-24 bg-grid-pattern overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Column: Intro Text -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-50 border border-teal-200/60 text-teal-700 text-xs font-medium">
+                            <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+                            นักศึกษาชั้นปีที่ 1 • สาธารณสุขศาสตร์
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-slate-900 leading-tight">
+                            สวัสดีค่ะ, ฉันชื่อ <br class="hidden sm:inline"/>
+                            <span class="text-teal-600">นางสาวทัณญาพร นากันหา</span>
+                        </h1>
+                        <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
+                            "น้องมายด์" นักศึกษาวิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น มีความมุ่งมั่นที่จะเรียนรู้และพัฒนาทักษะด้านสุขภาพ เพื่อการส่งเสริมสุขภาพที่ดีของชุมชนและสังคม
+                        </p>
+                        
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a href="#contact" class="px-6 py-3 rounded-xl bg-teal-600 text-white font-medium text-sm hover:bg-teal-700 shadow-lg shadow-teal-600/20 transition-all flex items-center gap-2">
+                                <i class="fa-regular fa-paper-plane"></i>
+                                ติดต่อฉัน
+                            </a>
+                            <a href="#education" class="px-6 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 font-medium text-sm hover:bg-slate-50 transition-all">
+                                ดูประวัติการศึกษา
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Profile Card Avatar -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-sm">
+                            <!-- Background Decoration Gradient -->
+                            <div class="absolute -top-4 -left-4 w-72 h-72 bg-teal-300/30 rounded-full blur-3xl -z-10"></div>
+                            <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-emerald-300/30 rounded-full blur-3xl -z-10"></div>
+                            
+                            <!-- Profile Card -->
+                            <div class="bg-white rounded-2xl p-6 shadow-xl border border-slate-100 text-center space-y-4">
+                                <div class="relative w-36 h-36 mx-auto rounded-full bg-gradient-to-tr from-teal-500 to-emerald-400 p-1 shadow-md">
+                                    <div class="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                                        <!-- Placeholder Avatar with Letter M or Icon -->
+                                        <div class="flex flex-col items-center justify-center text-teal-600">
+                                            <span class="font-heading text-5xl font-bold">M</span>
+                                            <span class="text-[10px] tracking-widest text-slate-400 uppercase font-semibold mt-1">Mind</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading text-xl font-bold text-slate-800">ทัณญาพร นากันหา</h3>
+                                    <p class="text-xs text-slate-500">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</p>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 grid grid-cols-2 gap-2 text-left text-xs">
+                                    <div class="bg-slate-50 p-2.5 rounded-lg">
+                                        <span class="text-slate-400 block">ชื่อเล่น</span>
+                                        <span class="font-medium text-slate-700">มายด์</span>
+                                    </div>
+                                    <div class="bg-slate-50 p-2.5 rounded-lg">
+                                        <span class="text-slate-400 block">สถานะ</span>
+                                        <span class="font-medium text-slate-700">นักศึกษา ปี 1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Info Section -->
+        <section id="about" class="py-16 bg-white border-y border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900">ข้อมูลส่วนตัว (Personal Details)</h2>
+                    <p class="text-slate-500 text-sm mt-2">ข้อมูลเบื้องต้นเกี่ยวกับประวัติและสถานะส่วนบุคคล</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Info Card 1 -->
+                    <div class="bg-slate-50/70 rounded-xl p-5 border border-slate-200/60 hover:border-teal-300 transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center mb-4 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-cake-candles text-lg"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">อายุ</span>
+                        <h4 class="text-xl font-heading font-bold text-slate-800 mt-1">18 ปี</h4>
+                    </div>
+
+                    <!-- Info Card 2 -->
+                    <div class="bg-slate-50/70 rounded-xl p-5 border border-slate-200/60 hover:border-teal-300 transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center mb-4 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-flag text-lg"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">เชื้อชาติ / สัญชาติ</span>
+                        <h4 class="text-xl font-heading font-bold text-slate-800 mt-1">ไทย</h4>
+                    </div>
+
+                    <!-- Info Card 3 -->
+                    <div class="bg-slate-50/70 rounded-xl p-5 border border-slate-200/60 hover:border-teal-300 transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center mb-4 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-hands-praying text-lg"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">ศาสนา</span>
+                        <h4 class="text-xl font-heading font-bold text-slate-800 mt-1">พุทธ</h4>
+                    </div>
+
+                    <!-- Info Card 4 -->
+                    <div class="bg-slate-50/70 rounded-xl p-5 border border-slate-200/60 hover:border-teal-300 transition-all group">
+                        <div class="w-10 h-10 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center mb-4 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">สถานที่ศึกษา</span>
+                        <h4 class="text-xl font-heading font-bold text-slate-800 mt-1">ขอนแก่น, ไทย</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Timeline Section -->
+        <section id="education" class="py-16 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900">ประวัติการศึกษา (Education)</h2>
+                    <p class="text-slate-500 text-sm mt-2">เส้นทางการเรียนรู้และสถาบันการศึกษา</p>
+                </div>
+
+                <div class="relative border-l-2 border-teal-200 ml-4 sm:ml-32 space-y-12">
+                    
+                    <!-- Timeline Item 1: Present -->
+                    <div class="relative pl-8 sm:pl-10">
+                        <!-- Bullet point -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-600 ring-4 ring-white"></div>
+                        
+                        <!-- Left date label for tablet/desktop -->
+                        <div class="sm:absolute sm:-left-36 sm:top-1 sm:w-28 sm:text-right text-xs font-semibold text-teal-600 uppercase tracking-wider mb-2 sm:mb-0">
+                            ปัจจุบัน
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition-shadow">
+                            <div class="inline-block px-2.5 py-0.5 rounded bg-teal-50 text-teal-700 text-xs font-semibold mb-2">
+                                อุดมศึกษา / ระดับประกาศนียบัตรวิชาชีพชั้นสูง
+                            </div>
+                            <h3 class="text-lg font-heading font-bold text-slate-900">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</h3>
+                            <p class="text-sm text-slate-600 mt-1">Sirindhorn College of Public Health, Khon Kaen</p>
+                            <p class="text-xs text-slate-500 mt-3 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-teal-500"></i>
+                                กำลังศึกษาชั้นปีที่ 1
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2: Secondary School -->
+                    <div class="relative pl-8 sm:pl-10">
+                        <!-- Bullet point -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                        
+                        <!-- Left date label for tablet/desktop -->
+                        <div class="sm:absolute sm:-left-36 sm:top-1 sm:w-28 sm:text-right text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 sm:mb-0">
+                            สำเร็จการศึกษา
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition-shadow">
+                            <div class="inline-block px-2.5 py-0.5 rounded bg-slate-100 text-slate-600 text-xs font-semibold mb-2">
+                                มัธยมศึกษา
+                            </div>
+                            <h3 class="text-lg font-heading font-bold text-slate-900">โรงเรียนคำแคนวิทยาคม</h3>
+                            <p class="text-sm text-slate-600 mt-1">Khamkhanwittayakhom School</p>
+                            <p class="text-xs text-slate-500 mt-3 flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle text-emerald-500"></i>
+                                สำเร็จการศึกษามัธยมศึกษาตอนปลาย
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Goals Section -->
+        <section id="goals" class="py-16 bg-white border-t border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Left: Academic & Career Goals -->
+                    <div class="space-y-6">
+                        <div>
+                            <h2 class="text-2xl font-heading font-bold text-slate-900">เป้าหมายทางวิชาการ (Academic Goals)</h2>
+                            <p class="text-slate-500 text-sm mt-1">ความตั้งใจและเป้าหมายในการศึกษาสาธารณสุข</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="w-8 h-8 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-book-open text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold text-slate-800 text-sm">การเรียนรู้ทฤษฎีและปฏิบัติ</h4>
+                                    <p class="text-xs text-slate-600 mt-1">มุ่งมั่นศึกษาความรู้พื้นฐานด้านสาธารณสุข ชุมชน และวิทยาศาสตร์การแพทย์เพื่อนำมาประยุกต์ใช้</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="w-8 h-8 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-users-medical text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold text-slate-800 text-sm">การบริการและดูแลสุขภาพชุมชน</h4>
+                                    <p class="text-xs text-slate-600 mt-1">พัฒนาทักษะการทำงานร่วมกับชุมชน การส่งเสริมสุขภาพ และการป้องกันโรคในระดับปฐมภูมิ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                                <div class="w-8 h-8 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center shrink-0 mt-0.5">
+                                    <i class="fa-solid fa-award text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-semibold text-slate-800 text-sm">การพัฒนาตนเองอย่างต่อเนื่อง</h4>
+                                    <p class="text-xs text-slate-600 mt-1">สร้างวินัยและจริยธรรมวิชาชีพ เพื่อก้าวสู่นักสาธารณสุขที่มีคุณภาพในอนาคต</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Soft Skills & Field Interests -->
+                    <div class="space-y-6">
+                        <div>
+                            <h2 class="text-2xl font-heading font-bold text-slate-900">ความสนใจ & ทักษะ (Interests & Skills)</h2>
+                            <p class="text-slate-500 text-sm mt-1">ด้านที่สนใจเป็นพิเศษในการศึกษาสาธารณสุข</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-teal-50/50 border border-teal-100 text-center">
+                                <i class="fa-solid fa-heart-pulse text-2xl text-teal-600 mb-2"></i>
+                                <h4 class="font-heading font-semibold text-slate-800 text-sm">Health Promotion</h4>
+                                <p class="text-[11px] text-slate-500 mt-1">การส่งเสริมสุขภาพ</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-teal-50/50 border border-teal-100 text-center">
+                                <i class="fa-solid fa-hand-holding-hand text-2xl text-teal-600 mb-2"></i>
+                                <h4 class="font-heading font-semibold text-slate-800 text-sm">Community Care</h4>
+                                <p class="text-[11px] text-slate-500 mt-1">การดูแลสุขภาพชุมชน</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-teal-50/50 border border-teal-100 text-center">
+                                <i class="fa-solid fa-shield-virus text-2xl text-teal-600 mb-2"></i>
+                                <h4 class="font-heading font-semibold text-slate-800 text-sm">Disease Control</h4>
+                                <p class="text-[11px] text-slate-500 mt-1">การป้องกันโรค</p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-teal-50/50 border border-teal-100 text-center">
+                                <i class="fa-solid fa-people-group text-2xl text-teal-600 mb-2"></i>
+                                <h4 class="font-heading font-semibold text-slate-800 text-sm">Teamwork</h4>
+                                <p class="text-[11px] text-slate-500 mt-1">การทำงานเป็นทีม</p>
+                            </div>
+                        </div>
+
+                        <!-- Progress indicators -->
+                        <div class="space-y-3 pt-2">
+                            <div>
+                                <div class="flex justify-between text-xs font-medium mb-1">
+                                    <span class="text-slate-700">ทักษะการปรับตัวและการเรียนรู้</span>
+                                    <span class="text-teal-600">90%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-teal-500 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-medium mb-1">
+                                    <span class="text-slate-700">การสื่อสารมนุษยสัมพันธ์</span>
+                                    <span class="text-teal-600">85%</span>
+                                </div>
+                                <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-teal-500 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-slate-900 text-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <h2 class="text-3xl font-heading font-bold">ช่องทางติดต่อ <br/><span class="text-teal-400">Contact Information</span></h2>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            สามารถติดต่อเพื่อสอบถามข้อมูลเพิ่มเติม แลกเปลี่ยนความรู้ หรือติดต่องานวิชาการได้ตามช่องทางด้านล่างนี้ค่ะ
+                        </p>
+
+                        <div class="space-y-4 pt-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 text-teal-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">สถาบัน</span>
+                                    <span class="text-sm font-medium">วิทยาลัยการสาธารณสุขสิรินธร จังหวัดขอนแก่น</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 text-teal-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">อีเมล</span>
+                                    <span class="text-sm font-medium">tannyaporn.m@scphkhonkaen.ac.th</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 text-teal-400 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-pin"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">ที่อยู่</span>
+                                    <span class="text-sm font-medium">จังหวัดขอนแก่น, ประเทศไทย</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modern Contact Form -->
+                    <div class="lg:col-span-7">
+                        <form onsubmit="handleFormSubmit(event)" class="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 space-y-4">
+                            <h3 class="text-xl font-heading font-semibold text-white mb-4">ส่งข้อความหาฉัน</h3>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">ชื่อผู้ติดต่อ</label>
+                                    <input type="text" required placeholder="ชื่อ-นามสกุล" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-teal-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">อีเมลติดต่อ</label>
+                                    <input type="email" required placeholder="your@email.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-teal-500 transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">หัวข้อ</label>
+                                <input type="text" required placeholder="เรื่องที่ต้องการติดต่อ" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-teal-500 transition-colors">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">ข้อความ</label>
+                                <textarea rows="4" required placeholder="รายละเอียดข้อความ..." class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-teal-500 transition-colors resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3 rounded-lg bg-teal-600 text-white font-medium text-sm hover:bg-teal-500 transition-colors flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>ส่งข้อความ</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-500 py-8 border-t border-slate-800 text-xs">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Tannyaporn Nakanha. All rights reserved.</p>
+            <p>Sirindhorn College of Public Health, Khon Kaen</p>
+        </div>
+    </footer>
+
+    <!-- GitHub Pages Guide Modal -->
+    <div id="github-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative space-y-4 max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                <div class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center text-xl">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-slate-800 text-lg">วิธีนำไฟล์ขึ้น GitHub Pages</h3>
+                    <p class="text-xs text-slate-500">ขั้นตอนการเปิดใช้งานเว็บไซต์ portfolio ออนไลน์ฟรี</p>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-xs text-slate-600 leading-relaxed">
+                <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+                    <span class="font-bold text-slate-800 block mb-1">ขั้นตอนที่ 1: เตรียมไฟล์</span>
+                    บันทึกโค้ดหน้านี้เป็นไฟล์ชื่อ <code class="bg-slate-200 px-1.5 py-0.5 rounded text-slate-800 font-mono">index.html</code>
+                </div>
+
+                <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+                    <span class="font-bold text-slate-800 block mb-1">ขั้นตอนที่ 2: สร้าง Repository</span>
+                    1. สมัคร/เข้าสู่ระบบ <a href="https://github.com" target="_blank" class="text-teal-600 underline">GitHub.com</a><br>
+                    2. กดปุ่ม <strong>+ (New repository)</strong><br>
+                    3. ตั้งชื่อ Repository เช่น <code class="bg-slate-200 px-1.5 py-0.5 rounded text-slate-800 font-mono">my-portfolio</code> แล้วกด Create Repository
+                </div>
+
+                <div class="p-3 bg-slate-50 rounded-lg border border-slate-100">
+                    <span class="font-bold text-slate-800 block mb-1">ขั้นตอนที่ 3: อัปโหลดไฟล์</span>
+                    1. ในหน้า Repository กดปุ่ม <strong>uploading an existing file</strong><br>
+                    2. ลากไฟล์ <code class="bg-slate-200 px-1.5 py-0.5 rounded text-slate-800 font-mono">index.html</code> วางลงในช่องอัปโหลด<br>
+                    3. กดปุ่ม <strong>Commit changes</strong> ด้านล่าง
+                </div>
+
+                <div class="p-3 bg-teal-50 rounded-lg border border-teal-100 text-teal-800">
+                    <span class="font-bold block mb-1">ขั้นตอนที่ 4: เปิดใช้งาน GitHub Pages</span>
+                    1. ไปที่เมนู <strong>Settings</strong> ของ Repository นั้น<br>
+                    2. เมนูด้านซ้ายเลือก <strong>Pages</strong><br>
+                    3. ตรงหัวข้อ Build and deployment ให้เปลี่ยน Branch จาก None เป็น <strong>main</strong> แล้วกด Save<br>
+                    4. รอประมาณ 1-2 นาที คุณจะได้ลิงก์เว็บไซต์พร้อมใช้งาน!
+                </div>
+            </div>
+
+            <button onclick="closeModal()" class="w-full py-2.5 rounded-xl bg-slate-900 text-white font-medium text-xs hover:bg-slate-800 transition-colors">
+                เข้าใจแล้ว / ปิดหน้าต่าง
+            </button>
+        </div>
+    </div>
+
+    <!-- UI Logic Script -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal guide controllers
+        function openModal() {
+            document.getElementById('github-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('github-modal').classList.add('hidden');
+        }
+
+        // Form submission demo handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('ขอบคุณสำหรับข้อความค่ะ! ระบบจำลองการส่งข้อความเรียบร้อยแล้ว');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
